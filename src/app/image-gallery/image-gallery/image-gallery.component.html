@@ -1,0 +1,19 @@
+<div class="dropper" v-if="isLoggedIn">
+  <input type="file"
+  single
+  accept= "images/*"
+  (change)="uploadImages($event)"
+  #fileInput/>
+  <span (click)="fileInput.click()">Drop files here!</span>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2 col-lg-3 card p-1 m-2 position-relative" *ngFor= "let image of images$ | async">
+        <img [src]="imageUploadPath+image.storageName" class="m-1 h-10vh" alt="Image not available">
+        <div class="card-body">
+          <p class="card-text">{{image.name}}</p>
+        </div>
+        <mat-icon class="delete-icon" (click)="deleteImage(image._id)">delete</mat-icon>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.dropper {
+  height: 30vh;
+  border: 2px dashed black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+}
+.dropper:hover {
+  background-color: #eee;
+  cursor:pointer;
+}
+input {
+  width: 100%;
+  height: 30vh;
+  position:absolute;
+  opacity: 0;
+}
+.h-10vh {
+  height: 20vh;
+}
+.position-relative {
+  position: relative;
+}
+.delete-icon {
+ cursor: pointer;
+ position:absolute;
+ right:5px;
+}

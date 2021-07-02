@@ -1,0 +1,21 @@
+
+<form [formGroup]="form">
+  <div class="parent">
+    <div>
+      <legend>Login</legend>
+    </div>
+      <mat-form-field appearance="legacy" class="w-50">
+        <input matInput placeholder="Enter your email" floatLabel="always" formControlName="email" required>
+        <mat-error *ngIf="form.get('email').hasError('required') && !form.get('email').pristine">Email is required</mat-error>
+        <mat-error *ngIf="form.get('email').hasError('email') && !form.get('email').pristine">Email format should br valid</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="legacy" class="w-50">
+        <input type="password" matInput placeholder="Enter you password" formControlName="password" required>
+        <mat-error *ngIf="form.get('password').hasError('required') && !form.get('password').pristine">Password is required</mat-error>
+        <mat-error *ngIf="form.get('password').hasError('minlength') && !form.get('password').pristine">Password length should be minimum 5</mat-error>
+      </mat-form-field>
+    <div class="mt-2">
+      <button mat-flat-button color="primary" [disabled]= "form.invalid" (click)="login()">Login</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,14 @@
+<div>
+  <mat-toolbar color="primary">
+      <mat-icon class="navbar-icon">home</mat-icon>
+    <span>Image Gallery</span>
+    <span class="navbar-spacer"></span>
+    <a *ngIf="!isLoggedIn" routerLink="/" routerLinkActive="active">
+      <button mat-flat-button color="primary" >Login</button>
+    </a>
+    <a *ngIf="!isLoggedIn" routerLink="/signup" routerLinkActive="active">
+      <button mat-flat-button color="primary">Sign Up</button>
+    </a>
+    <button mat-flat-button color="primary" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+  </mat-toolbar>
+</div>
